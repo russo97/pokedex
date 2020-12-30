@@ -1,5 +1,5 @@
 
-const poke = Vue.component('pokemon-item', {
+Vue.component('pokemon-item', {
   name: "PokemonItem",
 
   props: ['pokemon'],
@@ -26,9 +26,9 @@ const poke = Vue.component('pokemon-item', {
     <li class="card" :class="types[0]">
       <img :src="pokemonThumb" :alt="name" class="card-image" />
       <h1 class="card-title"> {{ name }} </h1>
-      <h6 class="card-subtitle">
+      <h5 class="card-subtitle">
         {{ types.join(' - ') }}
-      </h6>
+      </h5>
     </li>
   `
 });
@@ -44,7 +44,7 @@ new Vue({
     }
   },
 
-  mounted: async function () {
+  async mounted () {
     const { basedURL, fetchError } = this;
 
     const pokemonList = Array.from({ length: 150 }, () => null);
