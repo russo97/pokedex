@@ -11,11 +11,16 @@
 
     <div class="container">
       <h1>Pokedex</h1>
-      <ul data-js="pokedex" id="pokedex" class="pokedex"></ul>
+      <ul data-js="pokedex" id="pokedex" class="pokedex">
+        <li :key="index" v-for="(pok, index) in allPokemons" class="card steel">
+          <img :src="pok.sprites.other.dream_world.front_default" alt="">
+          {{ pok.name }}
+        </li>
+      </ul>
     </div>
     
     <!-- external Vue CDN -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
-    <script src="./app.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.js"></script>
+    <script type="text/javascript" src="./app.js"></script>
   </body>
 </html>
