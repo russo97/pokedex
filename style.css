@@ -132,17 +132,18 @@ h1 {
 }
 
 .card-subtitle {
-	margin-top: 5px;
-	color: #666;
-	font-weight: lighter;
-	position: relative;
 	z-index: 2;
+	color: #666;
+	margin-top: 5px;
+	position: relative;
+	font-weight: lighter;
 }
 
 .card-image {
-	height: 180px;
-	position: relative;
 	z-index: 2;
+	height: 180px;
+	max-width: 90%;
+	position: relative;
 }
 
 @keyframes bounce {

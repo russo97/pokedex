@@ -12,10 +12,10 @@
     <div class="container">
       <h1>Pokedex</h1>
       <ul data-js="pokedex" id="pokedex" class="pokedex">
-        <li :key="index" v-for="(pok, index) in allPokemons" class="card steel">
-          <img :src="pok.sprites.other.dream_world.front_default" alt="">
-          {{ pok.name }}
-        </li>
+        <pokemon-item
+          :key="index"
+          :pokemon="pok"
+          v-for="(pok, index) in allPokemons" />
       </ul>
     </div>
     
