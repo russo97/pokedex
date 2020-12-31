@@ -27,9 +27,30 @@ Vue.component('pokemon-item', {
       <img :src="pokemonThumb" :alt="name" class="card-image" />
       <h1 class="card-title"> {{ name }} </h1>
       <h5 class="card-subtitle">
-        {{ types.join(' - ') }}
+        <pokemon-type
+          :key="type"
+          :type="type"
+          v-for="type in types" />
       </h5>
     </li>
+  `
+});
+
+Vue.component('pokemon-type', {
+  props: ['type'],
+
+  computed: {
+    typeClass () {
+      const { type } = this;
+
+      return `${type}_text`;
+    }
+  },
+
+  template: `
+    <span :class="typeClass" class="card-pill">
+      {{ type }}
+    </span>
   `
 });
 
