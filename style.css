@@ -119,6 +119,9 @@ h1 {
 	text-align: center;
 	font-weight: normal;
 	text-transform: capitalize;
+
+	display: flex;
+	justify-content: center;
 }
 
 .card-subtitle {

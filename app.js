@@ -37,6 +37,8 @@ Vue.component('pokemon-item', {
 });
 
 Vue.component('pokemon-type', {
+  name: 'PokemonType',
+
   props: ['type'],
 
   computed: {
@@ -90,6 +92,10 @@ new Vue({
 
     fetchError (error) {
       console.error(`ERROR: ${error}`);
+    },
+
+    showPokemonDetails (pokeId) {
+      const {} = this;
     }
   },
 
