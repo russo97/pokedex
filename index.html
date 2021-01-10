@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
-    <meta charset="UTF-8">
     <title>PokeDex</title>
+    <meta charset="UTF-8" />
     <link rel="stylesheet" href="./style.css" />
     <link href="https://fonts.googleapis.com/css?family=Rubik&display=swap" rel="stylesheet" />
-    
   </head>
   <body>
 
-    <div class="container">
+    <main class="container" id="pokedex">
       <h1>Pokedex</h1>
-      <ul data-js="pokedex" id="pokedex" class="pokedex">
+      <ul data-js="pokedex" class="pokedex">
         <pokemon-item
           :key="index"
           :pokemon="pok"
+          @details="showPokemonDetails(pok.id)"
           v-for="(pok, index) in allPokemons" />
       </ul>
-    </div>
+    </main>
     
     <!-- external Vue CDN -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.js"></script>

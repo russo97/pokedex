@@ -25,7 +25,7 @@ Vue.component('pokemon-item', {
   template: `
     <li class="card" :class="types[0]">
       <img :src="pokemonThumb" :alt="name" class="card-image" />
-      <h1 class="card-title"> {{ name }} </h1>
+      <h1 class="card-title" @click="$emit('details')"> {{ name }} </h1>
       <h5 class="card-subtitle">
         <pokemon-type
           :key="type"
@@ -95,10 +95,14 @@ new Vue({
     },
 
     showPokemonDetails (pokeId) {
-      const {} = this;
+      console.log(pokeId);
     }
   },
 
-  watch: {}
+  watch: {
+    allPokemons (cur) {
+      console.log(cur);
+    }
+  }
 });
 
